@@ -61,8 +61,8 @@ x = correct("hmap.dat", "hmap2.dat", (90*150, 30*300), visualize=1)
 ```
 
 The script will create a temp file for saving the data, you can rename it with
-```
-python tmp_file="your_file_name"
+```python
+tmp_file="your_file_name"
 ```
 
 And so on, if you need more args, take a look at the method head in the python script
@@ -92,8 +92,12 @@ x.tofile("hmap.out.dat")
 
 Use the script inside the GTA Network folder like this:
 
-- Load the map: `var hmap = new HeightMap("path/to/the/hmap.dat", -4100f, -4300f, -4100f+300*30, -4300f+150*90);`
-- Get the ground height at a pos: `var z = hmap.Get(player.position.X, player.position.Y);`
+- Load the map: ```csharp
+var hmap = new HeightMap("path/to/the/hmap.dat", -4100f, -4300f, -4100f+300*30, -4300f+150*90);
+```
+- Get the ground height at a pos: ```csharp
+var z = hmap.Get(player.position.X, player.position.Y);
+```
 
 The loading script is taken from out GTA:N server (opposing forces)[http://www.gta-op.com].
 The server uses it's own math library including a 2D Vector class, which we will release someday.
@@ -111,5 +115,8 @@ Island above the sea
 ![default](http://www.gta-op.com/hmap/above_sea.jpg)
 
 Some fancy stuff with visualize (1 file: a good map, 2 file: another map limited to z<=300)
-(Colors: yellow => both 0, green => one is 0, light blue => both equal, dark blue => both differ)
+- yellow => both 0
+- green => one is 0
+- light blue => both equal
+- dark blue => both differ
 ![default](http://www.gta-op.com/hmap/valid.png)
